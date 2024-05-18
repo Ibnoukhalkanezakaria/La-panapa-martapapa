@@ -12,29 +12,26 @@
 
 #include "../push_swap.h"
 
-long ft_atoi(char *s)
+long	ft_atoi(char *s)
 {
-    long long number;
-    long long one;
-    
-    one = 1;
-    number = 0;
+	long long	number;
+	long long	one;
 
-    while (*s == ' ')
-        s++;
-    
-    if(*s == '-' || *s == '+')
-    {
-        if(*s == '-')
-            one *= -1;
-    }
-    
-    if(!(*s >= '0' && *s <= '9'))
-        return 0;
-    while (*s >= '0' && *s <= '9')
-    {
-       number = number * 10 + (*s - '0');
-       s++;
-    }
-    return number * one;
+	one = 1;
+	number = 0;
+	while (*s == ' ')
+		s++;
+	if (*s == '-' || *s == '+')
+	{
+		if (*s == '-')
+			one *= -1;
+	}
+	if (!(*s >= '0' && *s <= '9'))
+		return (0);
+	while (*s >= '0' && *s <= '9')
+	{
+		number = number * 10 + (*s - '0');
+		s++;
+	}
+	return (number * one);
 }

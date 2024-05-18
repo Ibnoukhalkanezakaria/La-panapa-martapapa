@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/18 20:17:22 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/18 17:06:01 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../push_swap.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
+char	*ft_strdup(char *s)
+{
+	char	*p;
+	int		i;
 
-// typedef struct s_list
-// {
-// } t_stack;
-
-size_t	ft_strlen(char *s);
-long	ft_atoi(char *s);
-char	**ft_split(char const *s, char c);
-char	*ft_strdup(char *s);
-int		*numbers(int ac, char **av);
-char	*ft_strjoin(char *s1, char *s2);
-char	*ft_strcat(char *dest, char *src);
-int		checker(int ac, char **av);
-
-#endif
+	p = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	i = 0;
+	while (s[i])
+	{
+		p[i] = s[i];
+		i++;
+	}
+	p[i] = '\0';
+	return (p);
+}

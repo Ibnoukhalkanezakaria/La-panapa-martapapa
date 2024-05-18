@@ -12,8 +12,8 @@
 
 #include "../push_swap.h"
 
-int is_sorted(t_stack *a)
+int	is_sorted(t_stack *a)
 {
-    (void)a;
-    return 1;
+	(void)a;
+	return (1);
 }
