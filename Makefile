@@ -3,10 +3,9 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
 SRC = push_swap.c functions/ft_atoi.c functions/ft_strlen.c \
-      functions/ft_strdup.c functions/ft_strjoin.c \
 	  functions/ft_strcat.c functions/ft_split.c \
-	  parsing/numbers.c parsing/checker.c parsing/duplicate_number.c \
-	  error/error.c \
+	  parsing/numbers.c parsing/duplicate_number.c parsing/sort.c \
+	  error/error.c free/cleaning_pars.c \
 
 OBJ = ${SRC:.c=.o}
 

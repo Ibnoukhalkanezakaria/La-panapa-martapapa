@@ -14,20 +14,20 @@
 
 void	int_m(long n)
 {
-	if(n > INT_MAX || n < INT_MIN)
+	if (n > INT_MAX || n < INT_MIN)
 		error(1);
 }
 
 void	bad_char(char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])
 	{
-		if(s[i] != '-' && s[i] != '+')
+		if (s[i] != '-' && s[i] != '+')
 		{
-			if(!(s[i] >= '0' && s[i] <= '9'))
+			if (!(s[i] >= '0' && s[i] <= '9'))
 				error(1);
 		}
 		i++;
@@ -38,7 +38,7 @@ long	ft_atoi(char *s)
 {
 	long long	number;
 	long long	one;
-	long long 	result;
+	long long	result;
 
 	result = 0;
 	one = 1;

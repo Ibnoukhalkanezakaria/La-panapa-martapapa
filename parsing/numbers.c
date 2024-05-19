@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/19 10:14:37 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/19 14:47:53 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,74 +24,74 @@ int	get_size(int ac, char **av)
 	return (count);
 }
 
-char	*get_first_arr(int ac, char **av)
+void	get_first_arr(t_stack *box, int ac, char **av)
 {
 	char	*p;
 	int		i;
 	int		size;
 
 	size = get_size(ac, av);
-	p = malloc(size);
+	p = (char *)malloc(sizeof(char) * size);
+	if (!p)
+		return ;
 	i = 1;
 	while (i < ac)
 	{
-		strcat(p, av[i]);
-		strcat(p, " ");
+		ft_strcat(p, av[i]);
+		ft_strcat(p, " ");
 		i++;
 	}
-	return (p);
+	box->p_arr = p;
 }
 
-int	size_int(int ac, char **av)
+void	size_int(t_stack *box, int ac, char **av)
 {
-	char	*string;
 	char	**r;
 	int		i;
 
-	string = get_first_arr(ac, av);
-	r = ft_split(string, ' ');
+	get_first_arr(box, ac, av);
+	r = ft_split(box->p_arr, ' ');
 	i = 0;
 	while (r[i])
 		i++;
-	return (i);
+	box->size_int = i;
+	free(r);
 }
 
 void	minus_plus(char *s)
 {
-	int i;
-	int size;
-
+	int	i;
+	int	size;
 
 	size = ft_strlen(s) - 1;
 	i = ft_strlen(s) - 1;
-
-	while (i >= 0) 
+	while (i >= 0)
 	{
-		if(s[size] == '-' || s[size] == '+')
+		if (s[size] == '-' || s[size] == '+')
 			error(1);
 		i--;
 	}
 }
 
-int	*numbers(int ac, char **av)
+void	numbers(t_stack *box, int ac, char **av)
 {
-	int		size_int_val;
-	char	*string;
 	char	**r;
 	int		*p;
 	int		i;
 
-	size_int_val = size_int(ac, av);
-	string = get_first_arr(ac, av);
-	r = ft_split(string, ' ');
-	p = (int *)malloc(sizeof(int) * size_int_val);
+	size_int(box, ac, av);
+	get_first_arr(box, ac, av);
+	r = ft_split(box->p_arr, ' ');
+	duplicate_number(r);
+	p = (int *)malloc(sizeof(int) * box->size_int);
 	i = 0;
 	while (r[i])
 	{
 		minus_plus(r[i]);
-		duplicate_number(r[i]);
 		p[i] = ft_atoi(r[i]);
 		i++;
 	}
-	return (p);
+	box->size_arr_f = i;
+	box->int_p = p;
+	free_r(r);
 }

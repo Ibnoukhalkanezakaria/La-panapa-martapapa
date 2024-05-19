@@ -1,48 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/19 09:28:30 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/19 11:24:55 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	find_error(char *s)
+void	sort(int *p, int size)
 {
 	int	i;
+	int	j;
+	int	tmp;
 
 	i = 0;
-	while (s[i])
+	while (i < size - 1)
 	{
-        if(s[i] != ' ' && s[i] != '-' && s[i] != '+')
+		j = 0;
+		while (j < size - 1)
 		{
-			// if(!(s[i] >= '0' && s[i] <= '9'))
-			// 	error(1);
+			if (p[i] < p[i + 1])
+			{
+				tmp = p[i + 1];
+				p[i + 1] = p[i];
+				p[i] = tmp;
+			}
+			j++;
 		}
 		i++;
 	}
-	return (1);
-}
-
-void	checker(int ac, char **av)
-{
-	int	i;
-    int check;
-
-	i = 1;
-	while (i < ac)
-	{
-        check = find_error(av[i]);
-		// if (check)
-			// return (1);
-		// else
-			// printf("Error\n");
-		i++;
-	}
-	// return (0);
 }

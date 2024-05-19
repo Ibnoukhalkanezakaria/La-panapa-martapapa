@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   cleaning_pars.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/18 17:06:01 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/19 14:50:12 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-char	*ft_strdup(char *s)
+void	free_r(char **r)
 {
-	char	*p;
-	int		i;
+	int	i;
 
-	p = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	i = 0;
-	while (s[i])
+	while (r[i])
 	{
-		p[i] = s[i];
+		free(r[i]);
 		i++;
 	}
-	p[i] = '\0';
-	return (p);
+	free(r);
+}
+
+void	free_box(t_stack *box)
+{
+	free(box->p_arr);
+	free(box->int_p);
+	free(box);
+}
+
+void	cleaning_pars(t_stack *box, int *p)
+{
+	free(p);
+	free(box);
 }

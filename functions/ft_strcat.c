@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/18 19:00:45 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/19 11:40:02 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 char	*ft_strcat(char *dest, char *src)
 {
-	int	i;
+	char	*ptr;
 
-	i = 0;
-	while (src[i])
+	ptr = dest;
+	while (*ptr)
+		ptr++;
+	while (*src)
 	{
-		dest[i] = src[i];
-		i++;
+		*ptr = *src;
+		ptr++;
+		src++;
 	}
-	dest[i] = '\0';
+	*ptr = '\0';
 	return (dest);
 }

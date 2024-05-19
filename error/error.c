@@ -12,8 +12,8 @@
 
 #include "../push_swap.h"
 
-void    error(int val)
+void	error(int val)
 {
-    write(2, "Error", 5);
-    exit(val);
+	write(2, "Error", 5);
+	exit(val);
 }
