@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/18 18:06:59 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/19 09:44:32 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,37 @@
 //     i++;
 // }
 // p[k] = '\0';
+
+
+#include "push_swap.h"
+
+long	ft_atoi(char *s)
+{
+	long long	number;
+	long long	one;
+
+	one = 1;
+	number = 0;
+	while (*s == ' ')
+		s++;
+	if (*s == '-' || *s == '+')
+	{
+		if (*s == '-')
+			one *= -1;
+		s++;
+	}
+	if (!(*s >= '0' && *s <= '9'))
+		error(1);
+	while (*s >= '0' && *s <= '9')
+	{
+		number = number * 10 + (*s - '0');
+		s++;
+	}
+	return (number * one);
+}
+
+
+int main()
+{
+    printf("%ld\n", ft_atoi("c88"));
+}

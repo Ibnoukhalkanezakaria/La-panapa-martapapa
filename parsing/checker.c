@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/18 20:10:52 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/19 09:28:30 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,30 @@ int	find_error(char *s)
 	i = 0;
 	while (s[i])
 	{
-		if ((s[i] >= 'a' && s[i] <= 'z'))
-			return (1);
+        if(s[i] != ' ' && s[i] != '-' && s[i] != '+')
+		{
+			// if(!(s[i] >= '0' && s[i] <= '9'))
+			// 	error(1);
+		}
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
-int	checker(int ac, char **av)
+void	checker(int ac, char **av)
 {
 	int	i;
+    int check;
 
 	i = 1;
 	while (i < ac)
 	{
-		if (find_error(av[i]))
-			return (0);
+        check = find_error(av[i]);
+		// if (check)
+			// return (1);
+		// else
+			// printf("Error\n");
 		i++;
 	}
-	return (1);
+	// return (0);
 }

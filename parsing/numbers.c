@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   numbers.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/18 19:57:32 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/19 10:14:37 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,23 @@ int	size_int(int ac, char **av)
 	return (i);
 }
 
+void	minus_plus(char *s)
+{
+	int i;
+	int size;
+
+
+	size = ft_strlen(s) - 1;
+	i = ft_strlen(s) - 1;
+
+	while (i >= 0) 
+	{
+		if(s[size] == '-' || s[size] == '+')
+			error(1);
+		i--;
+	}
+}
+
 int	*numbers(int ac, char **av)
 {
 	int		size_int_val;
@@ -71,6 +88,8 @@ int	*numbers(int ac, char **av)
 	i = 0;
 	while (r[i])
 	{
+		minus_plus(r[i]);
+		duplicate_number(r[i]);
 		p[i] = ft_atoi(r[i]);
 		i++;
 	}
