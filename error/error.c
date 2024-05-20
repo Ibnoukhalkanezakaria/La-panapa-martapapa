@@ -6,14 +6,15 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/19 09:27:17 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/20 10:20:19 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	error(int val)
+void	error(t_stack *box, int val)
 {
+	free_errors(box);
 	write(2, "Error", 5);
 	exit(val);
 }

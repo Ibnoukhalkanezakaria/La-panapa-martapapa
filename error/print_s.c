@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   print_s.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/20 10:38:42 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/20 09:43:44 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sort(int *p, int size)
+void	print_s(char *s)
 {
 	int	i;
-	int	j;
-	int	tmp;
 
 	i = 0;
-	while (i < size - 1)
+	while (s[i])
 	{
-		j = 0;
-		while (j < size - 1)
-		{
-			if (p[j] > p[j + 1])
-			{
-				tmp = p[j + 1];
-				p[j + 1] = p[j];
-				p[j] = tmp;
-			}
-			j++;
-		}
+		write(1, &s[i], 1);
 		i++;
 	}
 }

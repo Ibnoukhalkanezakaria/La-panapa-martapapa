@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/19 14:45:58 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/20 10:49:44 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,25 @@
 
 typedef struct s_list
 {
+	char	*join_all_numbers;
+	char	**r;
+	int		*all_numbers;
+	int		*p_dup;
+	int		get_size;
 	int		size_arr_f;
-	int		size_int;
-	char	*p_arr;
-	int		*int_p;
-	char	**av;
 }			t_stack;
 
 size_t		ft_strlen(char *s);
-long		ft_atoi(char *s);
+long		ft_atoi(t_stack *box, char *s);
 char		**ft_split(char const *s, char c);
 void		numbers(t_stack *box, int ac, char **av);
 char		*ft_strcat(char *dest, char *src);
-void		duplicate_number(char **s);
+void		duplicate_number(t_stack *box, char **s);
 void		sort(int *p, int size);
-void		error(int val);
-void		cleaning_pars(t_stack *box, int *p);
+void		error(t_stack *box, int val);
+void		print_s(char *s);
 void		free_r(char **r);
 void		free_box(t_stack *box);
+void		free_errors(t_stack *box);
 
 #endif

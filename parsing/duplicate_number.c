@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/19 12:48:07 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/20 10:48:12 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,26 +22,29 @@ int	size(char **s)
 	return (i);
 }
 
-int	get_p(int *p, int size)
+void	get_p(t_stack *box, int *p, int size)
 {
 	int	i;
 	int	index;
+	int	count;
 
 	sort(p, size);
 	i = 0;
 	index = 0;
+	count = 0;
 	while (i < size)
 	{
 		if (p[index] == p[index + 1])
-			error(1);
+			count++;
 		else
 			index += 1;
 		i++;
 	}
-	return (0);
+	if (count > 0)
+		error(box, 1);
 }
 
-void	duplicate_number(char **s)
+void	duplicate_number(t_stack *box, char **s)
 {
 	int	i;
 	int	size_val;
@@ -49,14 +52,12 @@ void	duplicate_number(char **s)
 
 	size_val = size(s);
 	p = (int *)malloc(sizeof(int) * size_val);
-	if (!p)
-		return ;
 	i = 0;
 	while (s[i])
 	{
-		p[i] = ft_atoi(s[i]);
+		p[i] = ft_atoi(box, s[i]);
 		i++;
 	}
-	get_p(p, size_val);
-	free(p);
+	box->p_dup = p;
+	get_p(box, p, size_val);
 }

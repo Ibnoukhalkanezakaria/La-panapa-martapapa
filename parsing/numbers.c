@@ -6,13 +6,13 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/19 14:47:53 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/20 10:49:34 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	get_size(int ac, char **av)
+void	get_size(t_stack *box, int ac, char **av)
 {
 	int	i;
 	int	count;
@@ -21,44 +21,29 @@ int	get_size(int ac, char **av)
 	i = 1;
 	while (i < ac)
 		count += ft_strlen(av[i++]) + 1;
-	return (count);
+	box->get_size = count;
 }
 
-void	get_first_arr(t_stack *box, int ac, char **av)
+void	join_all_numbers_on_s(t_stack *box, int ac, char **av)
 {
-	char	*p;
 	int		i;
-	int		size;
+	char	*p;
 
-	size = get_size(ac, av);
-	p = (char *)malloc(sizeof(char) * size);
-	if (!p)
-		return ;
+	get_size(box, ac, av);
+	p = (char *)malloc(sizeof(char) * (box->get_size + 1));
 	i = 1;
 	while (i < ac)
 	{
+		if (ft_strlen(av[i]) == 0)
+			error(box, 1);
 		ft_strcat(p, av[i]);
 		ft_strcat(p, " ");
 		i++;
 	}
-	box->p_arr = p;
+	box->join_all_numbers = p;
 }
 
-void	size_int(t_stack *box, int ac, char **av)
-{
-	char	**r;
-	int		i;
-
-	get_first_arr(box, ac, av);
-	r = ft_split(box->p_arr, ' ');
-	i = 0;
-	while (r[i])
-		i++;
-	box->size_int = i;
-	free(r);
-}
-
-void	minus_plus(char *s)
+void	minus_plus(t_stack *box, char *s)
 {
 	int	i;
 	int	size;
@@ -68,7 +53,7 @@ void	minus_plus(char *s)
 	while (i >= 0)
 	{
 		if (s[size] == '-' || s[size] == '+')
-			error(1);
+			error(box, 1);
 		i--;
 	}
 }
@@ -79,19 +64,18 @@ void	numbers(t_stack *box, int ac, char **av)
 	int		*p;
 	int		i;
 
-	size_int(box, ac, av);
-	get_first_arr(box, ac, av);
-	r = ft_split(box->p_arr, ' ');
-	duplicate_number(r);
-	p = (int *)malloc(sizeof(int) * box->size_int);
+	join_all_numbers_on_s(box, ac, av);
+	p = (int *)malloc(sizeof(int) * box->get_size);
+	r = ft_split(box->join_all_numbers, ' ');
+	duplicate_number(box, r);
 	i = 0;
 	while (r[i])
 	{
-		minus_plus(r[i]);
-		p[i] = ft_atoi(r[i]);
+		minus_plus(box, r[i]);
+		p[i] = ft_atoi(box, r[i]);
 		i++;
 	}
+	box->all_numbers = p;
 	box->size_arr_f = i;
-	box->int_p = p;
-	free_r(r);
+	box->r = r;
 }
