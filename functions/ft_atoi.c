@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/20 10:11:58 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:21:46 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	int_m(t_stack *box, long n)
 {
+	(void)box;
 	if (n > INT_MAX || n < INT_MIN)
-		error(box, 1);
+		box->error = 1;
 }
 
 void	bad_char(t_stack *box, char *s)
@@ -28,7 +29,7 @@ void	bad_char(t_stack *box, char *s)
 		if (s[i] != '-' && s[i] != '+')
 		{
 			if (!(s[i] >= '0' && s[i] <= '9'))
-				error(box, 1);
+				box->error = 1;
 		}
 		i++;
 	}

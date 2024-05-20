@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/20 10:48:12 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:21:32 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	get_p(t_stack *box, int *p, int size)
 		i++;
 	}
 	if (count > 0)
-		error(box, 1);
+		box->error = 1;
 }
 
 void	duplicate_number(t_stack *box, char **s)

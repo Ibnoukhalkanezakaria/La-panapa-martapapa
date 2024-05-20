@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/20 10:49:44 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:17:02 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_list
 	int		*p_dup;
 	int		get_size;
 	int		size_arr_f;
+	int		error;
 }			t_stack;
 
 size_t		ft_strlen(char *s);
@@ -38,8 +39,7 @@ void		numbers(t_stack *box, int ac, char **av);
 char		*ft_strcat(char *dest, char *src);
 void		duplicate_number(t_stack *box, char **s);
 void		sort(int *p, int size);
-void		error(t_stack *box, int val);
-void		print_s(char *s);
+void		error(int val);
 void		free_r(char **r);
 void		free_box(t_stack *box);
 void		free_errors(t_stack *box);

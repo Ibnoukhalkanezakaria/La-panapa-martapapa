@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/20 10:49:34 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:17:26 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	join_all_numbers_on_s(t_stack *box, int ac, char **av)
 	while (i < ac)
 	{
 		if (ft_strlen(av[i]) == 0)
-			error(box, 1);
+			box->error = 1;
 		ft_strcat(p, av[i]);
 		ft_strcat(p, " ");
 		i++;
@@ -53,7 +53,7 @@ void	minus_plus(t_stack *box, char *s)
 	while (i >= 0)
 	{
 		if (s[size] == '-' || s[size] == '+')
-			error(box, 1);
+			box->error = 1;
 		i--;
 	}
 }
