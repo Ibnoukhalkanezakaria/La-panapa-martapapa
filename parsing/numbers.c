@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/20 14:17:26 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:26:07 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void	numbers(t_stack *box, int ac, char **av)
 	while (r[i])
 	{
 		minus_plus(box, r[i]);
+		plus_plus(box, r[i]);
 		p[i] = ft_atoi(box, r[i]);
 		i++;
 	}

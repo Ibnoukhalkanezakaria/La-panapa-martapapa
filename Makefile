@@ -4,8 +4,8 @@ RM = rm -rf
 
 SRC = push_swap.c functions/ft_atoi.c functions/ft_strlen.c \
 	  functions/ft_strcat.c functions/ft_split.c \
-	  parsing/numbers.c parsing/duplicate_number.c parsing/sort.c \
-	  error/error.c free/free_box.c \
+	  parsing/numbers.c parsing/duplicate_number.c parsing/plus_plus.c \
+	  parsing/sort.c error/error.c free/free_box.c \
 
 OBJ = ${SRC:.c=.o}
 

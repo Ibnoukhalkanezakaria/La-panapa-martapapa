@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/20 14:17:02 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:27:25 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ char		**ft_split(char const *s, char c);
 void		numbers(t_stack *box, int ac, char **av);
 char		*ft_strcat(char *dest, char *src);
 void		duplicate_number(t_stack *box, char **s);
+void		plus_plus(t_stack *box, char *s);
 void		sort(int *p, int size);
 void		error(int val);
 void		free_r(char **r);
