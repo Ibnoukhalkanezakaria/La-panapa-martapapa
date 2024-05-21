@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   execution.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/20 21:08:14 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/20 21:08:04 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int ac, char **av)
+void	execution(t_stack*box,  int *p, int size)
 {
-	t_stack	*box;
+	int	is_sorte_val;
+    t_stack *a;
 
-	box = (t_stack *)malloc(sizeof(t_stack));
-	if (!box)
-		return (0);
-	if (ac > 1)
-	{
-		numbers(box, ac, av);
-		if (!box->error)
-			execution(box, box->all_numbers, box->size_arr_f);
-		else
-			error(1);
-	}
-	free_box(box);
-	return (0);
+    a = NULL;
+	is_sorte_val = is_sorted(p, size);
+	if (!is_sorte_val)
+    {
+		// printf("Start execution\n");
+        // if(length_stack(a))
+        // printf("%d\n", length_stack(a));
+        int i = 0;
+        while (i < box->size_arr_f)
+        {
+            printf("number: %d\n", box->all_numbers[i]);
+            i++;
+        }
+        
+    }
 }

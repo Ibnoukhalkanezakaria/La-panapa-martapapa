@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/20 14:27:25 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/20 21:08:29 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ typedef struct s_list
 	int		get_size;
 	int		size_arr_f;
 	int		error;
+	void	*next;
+	void	*prev;
+	int		content;
 }			t_stack;
 
 size_t		ft_strlen(char *s);
@@ -44,5 +47,8 @@ void		error(int val);
 void		free_r(char **r);
 void		free_box(t_stack *box);
 void		free_errors(t_stack *box);
+void	execution(t_stack*box,  int *p, int size);
+int			is_sorted(int *p, int size);
+int	length_stack(t_stack *lst);
 
 #endif
