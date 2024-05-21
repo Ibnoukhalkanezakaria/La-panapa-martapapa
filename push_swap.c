@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/20 21:08:14 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/21 10:33:28 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	main(int ac, char **av)
 {
+	(void)av;
 	t_stack	*box;
 
 	box = (t_stack *)malloc(sizeof(t_stack));
@@ -23,7 +24,10 @@ int	main(int ac, char **av)
 	{
 		numbers(box, ac, av);
 		if (!box->error)
+		{
 			execution(box, box->all_numbers, box->size_arr_f);
+			// printf("..........");
+		}
 		else
 			error(1);
 	}

@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/20 21:08:29 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/21 11:31:19 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
 
-typedef struct s_list
+typedef struct s_stack
 {
 	char	*join_all_numbers;
 	char	**r;
@@ -30,8 +30,10 @@ typedef struct s_list
 	int		get_size;
 	int		size_arr_f;
 	int		error;
-	void	*next;
-	void	*prev;
+	struct s_stack *big_node;
+	struct s_stack **a;
+	struct s_stack	*next;
+	struct s_stack	*prev;
 	int		content;
 }			t_stack;
 
@@ -47,8 +49,21 @@ void		error(int val);
 void		free_r(char **r);
 void		free_box(t_stack *box);
 void		free_errors(t_stack *box);
-void	execution(t_stack*box,  int *p, int size);
+void		execution(t_stack *box, int *p, int size);
 int			is_sorted(int *p, int size);
-int	length_stack(t_stack *lst);
+int			length_stack(t_stack *lst);
+void	numbers_on_a(t_stack*box, t_stack **a, int *p);
+t_stack *find_last_node(t_stack *a);
+void	sa(t_stack **a, int check);
+void	sb(t_stack **b, int check);
+void	ss(t_stack **a, t_stack **b, int check);
+void	ra(t_stack **a, int check);
+void	rb(t_stack **b, int check);
+void	rr(t_stack **a, t_stack **b, int check);
+void	rra(t_stack **a, int check);
+void	rrb(t_stack **b, int check);
+void	rrr(t_stack **a, t_stack **b, int check);
+void	three_nodes(t_stack **a);
+t_stack* the_big_number(t_stack *a);
 
 #endif
