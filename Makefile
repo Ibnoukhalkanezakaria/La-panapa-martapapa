@@ -8,6 +8,7 @@ SRC = push_swap.c functions/ft_atoi.c functions/ft_strlen.c \
 	  parsing/sort.c error/error.c free/free_box.c \
 	  execution/execution.c execution/is_sorted.c \
 	  execution/length_stack.c execution/numbers_on_a.c \
+	  execution/find_last_node.c \
 	  operations/swap.c execution/three_nodes.c execution/the_big_number.c \
 	  operations/rotate.c operations/reverse_rotate.c \
 

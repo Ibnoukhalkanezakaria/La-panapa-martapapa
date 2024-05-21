@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/21 11:30:09 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/21 11:54:35 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,15 @@ void	three_nodes(t_stack **a)
 	t_stack	*big_number;
 
 	big_number = the_big_number(*a);
-
-    printf("big_number: %d", big_number->content);
-	// if (*a == big_number)
-	// {
-	// 	ra(a, 0);
-	// }
-	// else if ((*a)->next == big_number)
-	// {
-	// 	rra(a, 0);
-	// }
-	// if ((*a)->content > (*a)->next->content)
-	// 	sa(a, 0);
+	
+	if ((*a)->content == big_number->content)
+	{
+		ra(a, 0);
+	}
+	else if ((*a)->next->content == big_number->content)
+	{
+		rra(a, 0);
+	}
+	if ((*a)->content > (*a)->next->content)
+		sa(a, 0);
 }

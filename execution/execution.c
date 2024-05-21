@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/21 11:31:41 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/21 11:45:06 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ void	execution(t_stack *box, int *p, int size)
 			sa(box->a, 0);
 		if(length_stack(*box->a) == 3)
 			three_nodes(box->a);
-		printf("length_stack(box->a): %d\n", length_stack(*box->a));
+		// printf("length_stack(box->a): %d\n", length_stack(*box->a));
 
-		cur = *a;
+		// cur = *a;
 
-		while (cur != NULL)
-		{
-			printf("(*cur)->content: %d\n", cur->content);
-			cur = cur->next;
-		}
+		// while (cur != NULL)
+		// {
+		// 	printf("(*cur)->content: %d\n", cur->content);
+		// 	cur = cur->next;
+		// }
 	}
 }
