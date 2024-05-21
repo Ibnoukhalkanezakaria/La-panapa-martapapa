@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/21 11:31:19 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:33:55 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_stack
 	int		error;
 	struct s_stack *big_node;
 	struct s_stack **a;
+	struct s_stack **b;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 	int		content;
@@ -64,6 +65,10 @@ void	rra(t_stack **a, int check);
 void	rrb(t_stack **b, int check);
 void	rrr(t_stack **a, t_stack **b, int check);
 void	three_nodes(t_stack **a);
+void	five_nodes(t_stack **a, t_stack **b);
 t_stack* the_big_number(t_stack *a);
+t_stack* the_small_number(t_stack *a);
+void	pa(t_stack **a, t_stack **b, int check);
+void	pb(t_stack **b, t_stack **a, int check);
 
 #endif
