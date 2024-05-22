@@ -27,7 +27,7 @@ void	free_r(char **r)
 
 void	free_a(t_stack **a)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	while (*a != NULL)
 	{
@@ -46,7 +46,7 @@ void	free_box(t_stack *box)
 	if (box->r)
 		free_r(box->r);
 	free(box);
-	if(box->a)
+	if (box->a)
 		free_a(box->a);
 }
 

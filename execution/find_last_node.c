@@ -12,11 +12,11 @@
 
 #include "../push_swap.h"
 
-t_stack *find_last_node(t_stack *a)
+t_stack	*find_last_node(t_stack *a)
 {
-    if(!a)
-        return NULL;
-    while (a->next != NULL)
-        a = a->next;
-    return a;
+	if (!a)
+		return (NULL);
+	while (a->next != NULL)
+		a = a->next;
+	return (a);
 }

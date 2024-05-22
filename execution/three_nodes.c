@@ -17,7 +17,6 @@ void	three_nodes(t_stack **a)
 	t_stack	*big_number;
 
 	big_number = the_big_number(*a);
-	
 	if ((*a)->content == big_number->content)
 	{
 		ra(a, 0);
