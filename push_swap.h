@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/22 10:04:20 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/22 10:17:48 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void				sort(int *p, int size);
 void				error(int val);
 void				free_r(char **r);
 void				free_box(t_stack *box);
-void				free_errors(t_stack *box);
 void				execution(t_stack *box, int *p, int size);
 int					is_sorted(int *p, int size);
 int					length_stack(t_stack *lst);
@@ -70,5 +69,6 @@ t_stack				*the_big_number(t_stack *a);
 t_stack				*the_small_number(t_stack *a);
 void				pa(t_stack **a, t_stack **b, int check);
 void				pb(t_stack **b, t_stack **a, int check);
+void				big_cases(t_stack *box, t_stack **a, t_stack **b);
 
 #endif

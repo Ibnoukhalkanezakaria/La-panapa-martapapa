@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/21 10:33:14 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/22 10:17:37 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,6 @@ void	free_box(t_stack *box)
 	free(box);
 	if (box->a)
 		free_a(box->a);
-}
-
-void	free_errors(t_stack *box)
-{
-	(void)box;
+	if (box->b)
+		free_a(box->b);
 }
