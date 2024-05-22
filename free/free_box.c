@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/22 10:17:37 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/22 11:07:21 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ void	free_r(char **r)
 	free(r);
 }
 
-void	free_a(t_stack **a)
+void	free_struct(t_stack **lst)
 {
 	t_stack	*tmp;
 
-	while (*a != NULL)
+	while (*lst != NULL)
 	{
-		tmp = *a;
-		*a = (*a)->next;
+		tmp = *lst;
+		*lst = (*lst)->next;
 		free(tmp);
 	}
-	free(a);
+	free(lst);
 }
 
 void	free_box(t_stack *box)
@@ -47,7 +47,8 @@ void	free_box(t_stack *box)
 		free_r(box->r);
 	free(box);
 	if (box->a)
-		free_a(box->a);
+		free_struct(box->a);
 	if (box->b)
-		free_a(box->b);
+		free_struct(box->b);
+	free(box->big_number);
 }

@@ -6,13 +6,13 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/22 10:01:48 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/22 11:09:32 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	create_node(t_stack **a, int number)
+void	create_node(t_stack *box, t_stack **a, int number)
 {
 	t_stack	*new_node;
 	t_stack	*last_node;
@@ -34,6 +34,7 @@ void	create_node(t_stack **a, int number)
 		new_node->next = NULL;
 		last_node->prev = new_node;
 	}
+	box->new_node = new_node;
 }
 
 void	numbers_on_a(t_stack *box, t_stack **a, int *p)
@@ -43,7 +44,7 @@ void	numbers_on_a(t_stack *box, t_stack **a, int *p)
 	i = 0;
 	while (i < box->size_arr_f)
 	{
-		create_node(a, p[i]);
+		create_node(box, a, p[i]);
 		i++;
 	}
 }

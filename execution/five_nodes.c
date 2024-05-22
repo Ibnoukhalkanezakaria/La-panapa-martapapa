@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/22 10:08:13 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/22 11:06:40 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ int	get_index(t_stack *a, int small)
 	return (i);
 }
 
-void	five_nodes(t_stack **a, t_stack **b)
+void	five_nodes(t_stack *box, t_stack **a, t_stack **b)
 {
-	t_stack	*small_number;
-	int		size;
-	int		index;
+	int	size;
+	int	index;
+	int	small_number;
 
 	size = length_stack(*a);
 	small_number = the_small_number(*a);
-	index = get_index(*a, small_number->content);
+	index = get_index(*a, small_number);
 	while (size > 3)
 	{
 		if (index == 0)
@@ -46,9 +46,9 @@ void	five_nodes(t_stack **a, t_stack **b)
 			rra(a, 0);
 		size = length_stack(*a);
 		small_number = the_small_number(*a);
-		index = get_index(*a, small_number->content);
+		index = get_index(*a, small_number);
 	}
-	three_nodes(a);
+	three_nodes(box, a);
 	pa(a, b, 0);
 	pa(a, b, 0);
 }
