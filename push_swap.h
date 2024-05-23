@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/22 18:14:33 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/23 14:23:34 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ typedef struct s_stack
 	int				get_size;
 	int				size_arr_f;
 	int				error;
-	int				id;
+	int				index;
+	int				the_size;
 	struct s_stack	*big_node;
 	struct s_stack	**a;
 	struct s_stack	**b;
@@ -40,7 +41,7 @@ typedef struct s_stack
 	struct s_stack	*last_node;
 	struct s_stack	*big_number;
 	struct s_stack	*small_number;
-	struct s_stack	*tmp_a;
+	struct s_stack	*curr;
 	int				content;
 }					t_stack;
 
@@ -76,6 +77,5 @@ int					the_small_number(t_stack *a);
 void				pa(t_stack **a, t_stack **b, int check);
 void				pb(t_stack **b, t_stack **a, int check);
 void				big_cases(t_stack *box, t_stack **a, t_stack **b);
-void				get_id_by_sort(t_stack *a);
 
 #endif

@@ -12,7 +12,7 @@ SRC = push_swap.c functions/ft_atoi.c functions/ft_strlen.c \
 	  operations/swap.c execution/three_nodes.c \
 	  execution/the_small_number.c execution/the_big_number.c \
 	  operations/rotate.c operations/reverse_rotate.c \
-	  execution/big_cases/big_cases.c execution/big_cases/get_id_by_sort.c \
+	  execution/big_cases/big_cases.c \
 
 OBJ = ${SRC:.c=.o}
 
