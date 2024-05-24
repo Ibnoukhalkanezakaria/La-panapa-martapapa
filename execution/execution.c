@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/23 10:08:39 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/24 15:12:33 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	execution(t_stack *box, int *p, int size)
 		box->b = b;
 		if (box->size_arr_f == 2)
 			sa(box->a, 0);
-		if (box->size_arr_f == 3)
+		else if (box->size_arr_f == 3)
 			three_nodes(box, box->a);
-		if (box->size_arr_f > 3 && box->size_arr_f <= 5)
+		else if (box->size_arr_f > 3 && box->size_arr_f <= 5)
 			five_nodes(box, box->a, box->b);
 		else if (box->size_arr_f > 5)
 			big_cases(box, box->a, box->b);
