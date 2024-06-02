@@ -6,13 +6,13 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/20 15:26:38 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/29 16:21:44 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	is_sorted(int *p, int size)
+void	is_sorted(t_stack *box, int *p, int size)
 {
 	int	i;
 	int	index;
@@ -26,6 +26,7 @@ int	is_sorted(int *p, int size)
 		i++;
 	}
 	if ((i - 1) == index)
-		return (1);
-	return (0);
+		box->sorted = 1;
+	else
+		box->sorted = 0;
 }

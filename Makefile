@@ -6,7 +6,7 @@ SRC = push_swap.c functions/ft_atoi.c functions/ft_strlen.c \
 	  functions/ft_strcat.c functions/ft_split.c \
 	  parsing/numbers.c parsing/duplicate_number.c parsing/plus_plus.c \
 	  parsing/sort.c error/error.c free/free_box.c \
-	  execution/execution.c execution/is_sorted.c \
+	  execution/execution.c execution/is_sorted.c parsing/check_one.c parsing/inside_number.c \
 	  execution/length_stack.c execution/numbers_on_a.c \
 	  execution/find_last_node.c execution/five_nodes.c operations/push.c \
 	  operations/swap.c execution/three_nodes.c \

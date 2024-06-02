@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   inside_number.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/30 11:18:18 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/05/30 11:51:52 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int ac, char **av)
+void	inside_number(t_stack *box, char *r)
 {
-	t_stack	*box;
+	int	i;
 
-	box = (t_stack *)malloc(sizeof(t_stack));
-	if (!box)
-		return (0);
-	if (ac > 1)
+	i = 0;
+	while (r[i])
 	{
-		numbers(box, ac, av);
-		is_sorted(box, box->all_numbers, box->size_arr_f);
-		if (box->sorted == 1 && !box->error)
+		if (r[i] == '+' || r[i] == '-')
 		{
-			free_box(box);
-			return (0);
+			if (i > 0)
+				box->error = 1;
 		}
-		if (!box->error)
-			execution(box, box->all_numbers, box->size_arr_f);
-		else
-			error(1);
+		i++;
 	}
-	free_box(box);
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: zibnoukh <zibnoukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:19:50 by zibnoukh          #+#    #+#             */
-/*   Updated: 2024/05/22 11:09:32 by zibnoukh         ###   ########.fr       */
+/*   Updated: 2024/06/02 10:17:48 by zibnoukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ void	create_node(t_stack *box, t_stack **a, int number)
 	{
 		last_node = find_last_node(*a);
 		last_node->next = new_node;
-		new_node->next = NULL;
-		last_node->prev = new_node;
 	}
 	box->new_node = new_node;
 }
